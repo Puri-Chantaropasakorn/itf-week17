@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050b0c">
+  <meta name="description" content="FOODPICKER ITF — สุ่มเมนูอาหารภาคใต้ 5 จาน ให้โชคช่วยเลือกเมนูมื้อนี้ของคุณ">
+  <title>FOODPICKER ITF | สุ่มอาหารภาคใต้</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <nav class="navbar" aria-label="ข้อมูลโครงการ FOODPICKER ITF">
+        <span class="nav-id">69070158</span>
+        <span class="nav-brand">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>FOODPICKER <span class="brand-accent">ITF</span></span>
+        </span>
+        <span class="nav-week">Week17</span>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="intro" aria-labelledby="pageTitle">
+        <p class="eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Southern Thai Cuisine
+        </p>
+        <h1 class="hero-title" id="pageTitle">วันนี้กินอะไร<span class="accent">ดี?</span></h1>
+        <p class="hero-copy">รวมเมนูอาหารใต้จานเด็ด 5 อย่าง ให้การสุ่มช่วยเลือกเมนูมื้อนี้ของคุณ</p>
+      </section>
+
+      <article class="food-card" id="foodCard" aria-labelledby="foodName">
+        <div class="food-media">
+          <img
+            class="food-image is-active"
+            id="foodImageA"
+            src="img/หมูฮ้อง.jpg"
+            alt="หมูฮ้อง หมูสามชั้นสีน้ำตาลเข้มโรยหน้าด้วยผักชี"
+            fetchpriority="high"
+            draggable="false"
+          >
+          <img
+            class="food-image"
+            id="foodImageB"
+            src="img/หมูฮ้อง.jpg"
+            alt=""
+            aria-hidden="true"
+            draggable="false"
+          >
+
+          <div class="media-topbar">
+            <span class="media-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              อาหารภาคใต้
+            </span>
+            <span class="menu-count" id="menuCount" aria-label="เมนูที่ 1 จาก 5">
+              <span class="menu-current" id="currentNumber">01</span>
+              <span class="menu-divider" aria-hidden="true">/</span>
+              <span class="menu-total">05</span>
+            </span>
+          </div>
+
+          <p class="media-caption" aria-hidden="true">
+            <span class="media-caption-line"></span>
+            Southern Kitchen · 5 Selections
+          </p>
+        </div>
+
+        <div class="food-content" id="foodContent">
+          <p class="food-kicker" id="foodKicker">เมนูแนะนำสำหรับวันนี้</p>
+          <h2 class="food-name" id="foodName">หมูฮ้อง</h2>
+          <p class="food-description" id="foodDescription">
+            หมูสามชั้นเคี่ยวกับพะโล้และเครื่องเทศแบบภูเก็ตจนนุ่มสีน้ำตาลเข้ม
+            หอมพริกไทย กระเทียม และซีอิ๊ว กลมกล่อมแบบต้นตำรับ
+          </p>
+
+          <ul class="food-tags" id="foodTags" aria-label="ลักษณะเด่นของเมนู">
+            <li class="tag">ภูเก็ต</li>
+            <li class="tag">เคี่ยวพะโล้</li>
+          </ul>
+
+          <div class="card-actions">
+            <button
+              class="random-button"
+              id="randomButton"
+              type="button"
+              aria-controls="foodCard"
+              aria-describedby="menuHint"
+            >
+              <svg class="button-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect>
+                <circle cx="8.2" cy="8.2" r="1.2" fill="currentColor"></circle>
+                <circle cx="15.8" cy="8.2" r="1.2" fill="currentColor"></circle>
+                <circle cx="12" cy="12" r="1.2" fill="currentColor"></circle>
+                <circle cx="8.2" cy="15.8" r="1.2" fill="currentColor"></circle>
+                <circle cx="15.8" cy="15.8" r="1.2" fill="currentColor"></circle>
+              </svg>
+              <span>สุ่มอาหาร</span>
+            </button>
+            <p class="menu-hint" id="menuHint">
+              <span class="menu-hint-dot" aria-hidden="true"></span>
+              สุ่มจาก 5 เมนู
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <p class="sr-only" id="liveStatus" role="status" aria-live="polite"></p>
+    </main>
+  </div>
+</body>
+</html>
