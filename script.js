@@ -12,6 +12,7 @@ const foods = [
     alt: "จานหมูฮ้อง หมูสามชั้นเคี่ยวสีน้ำตาลเข้มโรยผักชี",
     description:
       "หมูสามชั้นเคี่ยวกับพะโล้และเครื่องเทศแบบภูเก็ตจนนุ่มสีน้ำตาลเข้ม หอมพริกไทย กระเทียม และซีอิ๊ว กลมกล่อมแบบต้นตำรับ",
+    price: 159,
     tags: ["ภูเก็ต", "เคี่ยวพะโล้"]
   },
   {
@@ -20,6 +21,7 @@ const foods = [
     alt: "จานคั่วกลิ้ง หมูสับผัดพริกแกงใต้จนแห้ง",
     description:
       "หมูสับผัดพริกแกงใต้กับขมิ้นจนแห้งหอมเครื่องเทศ เผ็ดร้อนปลายลิ้น เสิร์ฟคู่ผักสดและข้าวสวยร้อน ๆ",
+    price: 89,
     tags: ["พริกแกงใต้", "เผ็ดร้อน"]
   },
   {
@@ -28,6 +30,7 @@ const foods = [
     alt: "ชามแกงส้มปลาแบบปักษ์ใต้ น้ำแกงสีเหลืองจากขมิ้น",
     description:
       "แกงส้มปักษ์ใต้ที่ใส่ขมิ้นลงในน้ำแกง รสเปรี้ยว เค็ม เผ็ด กลมกล่อม พร้อมปลาและผักตามฤดูกาล",
+    price: 129,
     tags: ["ขมิ้น", "เปรี้ยวกลมกล่อม"]
   },
   {
@@ -36,6 +39,7 @@ const foods = [
     alt: "ชามแกงมัสมั่นไก่กะทิ หอมเครื่องเทศและถั่วลิสง",
     description:
       "แกงกะทิไก่หอมเครื่องเทศ อบเชย โป๊ยกั้ก และถั่วลิสง รสเข้มข้นมันนุ่ม ได้อิทธิพลวัฒนธรรมมุสลิมภาคใต้",
+    price: 149,
     tags: ["กะทิ", "เครื่องเทศ"]
   },
   {
@@ -44,6 +48,7 @@ const foods = [
     alt: "จานขนมจีนเส้นขาวราดน้ำยาปักษ์ใต้และพริกแห้ง",
     description:
       "เส้นขนมจีนนุ่ม ๆ ราดน้ำยาปักษ์ใต้หอมขมิ้นกะทิ กินคู่ผักสดหลากชนิด เมนูเรียบง่ายที่ขาดไม่ได้ในภาคใต้",
+    price: 79,
     tags: ["น้ำยาปักษ์ใต้", "ผักสด"]
   }
 ];
@@ -58,13 +63,21 @@ const foodImageB = document.getElementById("foodImageB");
 const foodName = document.getElementById("foodName");
 const foodKicker = document.getElementById("foodKicker");
 const foodDescription = document.getElementById("foodDescription");
+const foodPrice = document.getElementById("foodPrice");
+const foodPriceValue = document.getElementById("foodPriceValue");
 const foodTags = document.getElementById("foodTags");
 const currentNumber = document.getElementById("currentNumber");
 const menuCount = document.getElementById("menuCount");
 const randomButton = document.getElementById("randomButton");
 const liveStatus = document.getElementById("liveStatus");
 
-const animatedTextElements = [foodKicker, foodName, foodDescription, foodTags];
+const animatedTextElements = [
+  foodKicker,
+  foodName,
+  foodDescription,
+  foodPrice,
+  foodTags
+];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let currentIndex = 0;
@@ -165,6 +178,7 @@ function renderFood(index) {
   crossfadeImage(dish);
   foodName.textContent = dish.name;
   foodDescription.textContent = dish.description;
+  foodPriceValue.textContent = `฿${dish.price.toLocaleString("en-US")}`;
   updateTags(dish.tags);
 
   currentNumber.textContent = formatNumber(index + 1);
@@ -174,7 +188,7 @@ function renderFood(index) {
   );
 
   replayTextAnimation();
-  liveStatus.textContent = `สุ่มได้เมนู ${dish.name} แล้ว`;
+  liveStatus.textContent = `สุ่มได้เมนู ${dish.name} ราคา ${dish.price} บาท`;
 }
 
 /* =========================================================
